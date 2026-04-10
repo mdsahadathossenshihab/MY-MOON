@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-handwritten: "Dancing Script", cursive;
+  --font-bengali: "Hind Siliguri", sans-serif;
+  
+  --color-romantic-black: #050505;
+  --color-romantic-purple: #1a0b2e;
+  --color-romantic-pink: #ff4d94;
+  --color-romantic-glow: rgba(255, 77, 148, 0.3);
+}
+
+@layer base {
+  body {
+    @apply bg-romantic-black text-white font-bengali antialiased overflow-x-hidden;
+    background: radial-gradient(circle at 50% 50%, var(--color-romantic-purple) 0%, var(--color-romantic-black) 100%);
+  }
+  
+  h1, h2, h3 {
+    @apply font-handwritten;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px var(--color-romantic-glow);
+}
+
+.bg-glow {
+  box-shadow: 0 0 20px var(--color-romantic-glow);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-romantic-pink/30 rounded-full hover:bg-romantic-pink/50 transition-colors;
+}
